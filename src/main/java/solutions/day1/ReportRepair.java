@@ -9,7 +9,7 @@ public class ReportRepair {
         List<Integer> report = reportReader.read();
         EntriesFinder entriesFinder = new EntriesFinder(report);
 
-        int productPair = entriesFinder.findProductOfPairThatSumsTo( 2020);
+        int productPair = entriesFinder.findProductOfPairThatSumsTo(2020);
         int productTriple = entriesFinder.findProductOfTripleThatSumsTo(2020);
 
         System.out.println("Product of pair is: " + productPair);

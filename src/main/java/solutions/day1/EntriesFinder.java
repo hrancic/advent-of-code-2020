@@ -12,12 +12,12 @@ public class EntriesFinder {
         this.expenseReport = expenseReport;
     }
 
-     Integer findProductOfPairThatSumsTo(int targetSum) {
+    Integer findProductOfPairThatSumsTo(int targetSum) {
         Map<Integer, Integer> remainderToEntry = new HashMap<>();
-        for(Integer entry: expenseReport) {
-            remainderToEntry.put(targetSum-entry, entry);
+        for (Integer entry : expenseReport) {
+            remainderToEntry.put(targetSum - entry, entry);
         }
-        for (Integer entry: expenseReport) {
+        for (Integer entry : expenseReport) {
             if (remainderToEntry.containsKey(entry)) {
                 return entry * (targetSum - entry);
             }
@@ -26,7 +26,7 @@ public class EntriesFinder {
     }
 
     Integer findProductOfTripleThatSumsTo(int targetSum) {
-        for(Integer entry: expenseReport) {
+        for (Integer entry : expenseReport) {
             Integer result = findProductOfPairThatSumsTo(2020 - entry);
             if (result != null) {
                 return entry * result;
