@@ -12,7 +12,7 @@ public class EntriesFinder {
             for (int j = i + 1; j < expenseReport.length; j++) {
                 int secondEntry = expenseReport[j];
                 if (firstEntry + secondEntry == 2020) {
-                    return firstEntry + " " + secondEntry;
+                    return firstEntry + " * " + secondEntry + " = " + firstEntry * secondEntry;
                 }
             }
         }
