@@ -1,37 +1,37 @@
 package solutions.day1;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class EntriesFinder {
 
-    private EntriesFinder() {
-        throw new IllegalStateException("Should not instantiate utility class");
+    private final List<Integer> expenseReport;
+
+    EntriesFinder(List<Integer> expenseReport) {
+        this.expenseReport = expenseReport;
     }
 
-    static String find(int[] expenseReport) {
-        for (int i = 0; i < expenseReport.length; i++) {
-            int firstEntry = expenseReport[i];
-            for (int j = i + 1; j < expenseReport.length; j++) {
-                int secondEntry = expenseReport[j];
-                if (firstEntry + secondEntry == 2020) {
-                    return firstEntry + " * " + secondEntry + " = " + firstEntry * secondEntry;
-                }
-            }
-        }
-        return "No such entries";
-    }
-
-    static String findFaster(int[] expenseReport) {
+     Integer findProductOfPairThatSumsTo(int targetSum) {
         Map<Integer, Integer> remainderToEntry = new HashMap<>();
-        for(int entry: expenseReport) {
-            remainderToEntry.put(2020-entry, entry);
+        for(Integer entry: expenseReport) {
+            remainderToEntry.put(targetSum-entry, entry);
         }
-        for (int entry: expenseReport) {
+        for (Integer entry: expenseReport) {
             if (remainderToEntry.containsKey(entry)) {
-                return entry + " * " + (2020 - entry) + " = " + (entry * (2020 - entry));
+                return entry * (targetSum - entry);
             }
         }
-        return "No such entries";
+        return null;
+    }
+
+    Integer findProductOfTripleThatSumsTo(int targetSum) {
+        for(Integer entry: expenseReport) {
+            Integer result = findProductOfPairThatSumsTo(2020 - entry);
+            if (result != null) {
+                return entry * result;
+            }
+        }
+        return null;
     }
 }

@@ -14,24 +14,14 @@ public class ReportReader {
         this.path = path;
     }
 
-    int[] read() {
+    List<Integer> read() {
         try {
-            List<Integer> entries = Files.readAllLines(Paths.get(path), StandardCharsets.UTF_8)
+            return Files.readAllLines(Paths.get(path), StandardCharsets.UTF_8)
                     .stream()
                     .map(Integer::parseInt)
                     .collect(Collectors.toList());
-            return convertToArray(entries);
         } catch (IOException e) {
             throw new IllegalStateException("Could not read from file", e);
         }
-    }
-
-    private int[] convertToArray(List<Integer> entries) {
-        int[] result = new int[entries.size()];
-        int index = 0;
-        for(Integer entry: entries) {
-            result[index++] = entry;
-        }
-        return result;
     }
 }
