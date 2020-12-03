@@ -1,12 +1,14 @@
 package solutions.day1;
 
+import solutions.utilities.InputReader;
+
 import java.util.List;
 
 public class ReportRepair {
 
     public static void main(String[] args) {
-        ReportReader reportReader = new ReportReader("src/main/resources/input/day1.txt");
-        List<Integer> report = reportReader.read();
+        InputReader reportReader = new InputReader("src/main/resources/input/day1.txt");
+        List<Integer> report = reportReader.readAsIntegers();
         EntriesFinder entriesFinder = new EntriesFinder(report);
 
         int productPair = entriesFinder.findProductOfPairThatSumsTo(2020);
