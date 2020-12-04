@@ -3,7 +3,21 @@ package solutions.day2;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PasswordParser {
+public class PasswordUtils {
+
+    private PasswordUtils() {
+        throw new IllegalStateException("Should not instantiate utility class");
+    }
+
+    static int countValid(List<Password> passwords) {
+        int valid = 0;
+        for (Password password : passwords) {
+            if (password.isValidRevised()) {
+                valid++;
+            }
+        }
+        return valid;
+    }
 
     static List<Password> convertToPasswords(List<String> rows) {
         List<Password> passwords = new ArrayList<>();
