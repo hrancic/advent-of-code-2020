@@ -19,7 +19,7 @@ class EntriesFinderTest {
 
     @Test
     void shouldFindProductOfTripleThatSumsTo2020() {
-        int result = entriesFinder.findProductOfTripleThatSumsTo(2020);
+        int result = entriesFinder.findProductOfTripleThatSumsTo2020();
         assertEquals(241861950, result);
     }
 

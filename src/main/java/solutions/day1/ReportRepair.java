@@ -12,7 +12,7 @@ public class ReportRepair {
         EntriesFinder entriesFinder = new EntriesFinder(report);
 
         int productPair = entriesFinder.findProductOfPairThatSumsTo(2020);
-        int productTriple = entriesFinder.findProductOfTripleThatSumsTo(2020);
+        int productTriple = entriesFinder.findProductOfTripleThatSumsTo2020();
 
         System.out.println("Product of pair is: " + productPair);
         System.out.println("Product of triple is: " + productTriple);

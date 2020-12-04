@@ -25,7 +25,7 @@ public class EntriesFinder {
         return null;
     }
 
-    Integer findProductOfTripleThatSumsTo(int targetSum) {
+    Integer findProductOfTripleThatSumsTo2020() {
         for (Integer entry : expenseReport) {
             Integer result = findProductOfPairThatSumsTo(2020 - entry);
             if (result != null) {
