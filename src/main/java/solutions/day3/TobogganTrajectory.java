@@ -20,13 +20,12 @@ public class TobogganTrajectory {
                 new Slope(1, 2)
         );
 
-
         for (Slope slope : slopes) {
             Toboggan toboggan = new Toboggan(slope);
             traveler.setToboggan(toboggan);
             traveler.travel();
         }
 
-        traveler.reportBumps();
+        System.out.println("Bumped to trees much? " + traveler.reportBumps());
     }
 }

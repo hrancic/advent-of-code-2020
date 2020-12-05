@@ -24,13 +24,14 @@ class EntriesFinderTest {
     }
 
     private EntriesFinder givenEntriesFinder() {
-        List<Integer> expenseReport = Arrays.asList(1721,
+        List<Integer> expenseReport = Arrays.asList(
+                1721,
                 979,
                 366,
                 299,
                 675,
-                1456);
-
+                1456
+        );
         return new EntriesFinder(expenseReport);
     }
 }

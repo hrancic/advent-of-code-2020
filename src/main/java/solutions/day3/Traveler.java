@@ -26,8 +26,8 @@ public class Traveler {
         bumpProduct = bumpProduct * toboggan.getBumps();
     }
 
-    void reportBumps() {
-        System.out.println(bumpProduct);
+    int reportBumps() {
+       return bumpProduct;
     }
 
     void setToboggan(Toboggan toboggan) {
