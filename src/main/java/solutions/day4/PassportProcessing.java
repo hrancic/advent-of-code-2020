@@ -12,6 +12,5 @@ public class PassportProcessing {
 
         System.out.println(Counter.basic(passports));
         System.out.println(Counter.advanced(passports));
-
     }
 }
