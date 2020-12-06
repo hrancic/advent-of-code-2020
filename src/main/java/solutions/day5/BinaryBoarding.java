@@ -11,12 +11,14 @@ public class BinaryBoarding {
         List<String> boardingPasses = boardingPassReader.readAsStrings();
 
         int maxSeatId = 0;
-        for (String pass: boardingPasses) {
+        for (String pass : boardingPasses) {
             int seatId = SeatIdentifier.getSeatId(pass);
             if (seatId > maxSeatId) {
                 maxSeatId = seatId;
             }
         }
+
         System.out.println(maxSeatId);
+        System.out.println(SeatIdentifier.getMissingId(boardingPasses));
     }
 }
