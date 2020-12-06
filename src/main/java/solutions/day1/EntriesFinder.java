@@ -5,7 +5,6 @@ import java.util.List;
 import java.util.Map;
 
 public class EntriesFinder {
-
     private final List<Integer> expenseReport;
 
     EntriesFinder(List<Integer> expenseReport) {

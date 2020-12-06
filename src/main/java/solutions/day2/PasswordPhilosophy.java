@@ -11,7 +11,6 @@ public class PasswordPhilosophy {
         List<String> passwordDescriptions = passwordReader.readAsStrings();
         List<Password> passwords = PasswordUtils.convertToPasswords(passwordDescriptions);
         int count = PasswordUtils.countValid(passwords);
-
         System.out.println(count);
     }
 }
